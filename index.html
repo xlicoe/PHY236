@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHY 236: Advanced Lab I</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the code block syntax highlighting feel */
+        pre {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        }
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        .moodle-topic {
+            border-left: 4px solid transparent;
+            transition: border-color 0.2s ease-in-out;
+        }
+        .moodle-topic:hover {
+            border-left: 4px solid #561216; /* Coe College Maroon */
+        }
+        .moodle-link {
+            color: #561216;
+            text-decoration: none;
+        }
+        .moodle-link:hover {
+            text-decoration: underline;
+        }
+        /* Hide default details summary arrow to use custom SVG */
+        summary { list-style: none; }
+        summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-[#f4f6f8] text-gray-800 font-sans antialiased">
+
+    <div class="bg-white border-b border-gray-200 shadow-sm mb-6">
+        <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+            <nav class="flex text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                   
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 text-gray-400 mx-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                            <span class="text-gray-900 font-large">Coe College Department of Physics</span>
+                        </div>
+                    
+                </ol>
+            </nav>
+            <h1 class="text-3xl font-bold text-[#561216] tracking-tight">PHY 236: Advanced Lab I</h1>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 flex flex-col md:flex-row gap-8">
+        
+        <!-- Sidebar Navigation Drawer -->
+        <aside class="w-full md:w-72 shrink-0">
+            <div class="sticky top-6 space-y-6">
+                <!-- Course Navigation -->
+                <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                    <div class="bg-gray-50 border-b border-gray-200 px-4 py-3 font-semibold text-gray-800">
+                        Course Navigation
+                    </div>
+                    <div class="p-2">
+                        <ul class="space-y-1 text-sm text-[#561216]">
+                            <li>
+                                <a href="#topic-0" class="flex items-center gap-3 hover:bg-gray-100 p-2 rounded-md transition-colors">
+                                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    General Info
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#experiments" class="flex items-center gap-3 hover:bg-gray-100 p-2 rounded-md transition-colors">
+                                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                                    Experiments
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#python-viz" class="flex items-center gap-3 hover:bg-gray-100 p-2 rounded-md transition-colors">
+                                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    Python Visualization
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#lab-reports" class="flex items-center gap-3 hover:bg-gray-100 p-2 rounded-md transition-colors">
+                                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                    Lab Reports
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Instructor Info Card -->
+                <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                    <div class="bg-[#561216] border-b border-[#561216] px-4 py-3 font-semibold text-white flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        Instructor
+                    </div>
+                    <div class="p-4">
+                        <p class="font-medium text-gray-800 mb-1">Instructor Name</p>
+                        <a href="mailto:instructor@coe.edu" class="text-sm text-[#561216] hover:underline block mb-1">instructor@coe.edu</a>
+                        <p class="text-sm text-gray-600 mb-4">Peterson Hall</p>
+                        
+                        <a href="https://calendar.app.google/cK1RJcGRU6kdp6tb7" target="_blank" class="flex items-center justify-center gap-2 w-full text-center bg-[#A68145] hover:bg-[#8e6d38] text-white font-medium py-2 px-4 rounded transition-colors text-sm shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                            Schedule Meeting
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 space-y-6">
+            
+            <!-- Topic 0: General Info -->
+            <section id="topic-0" class="moodle-topic bg-white border border-gray-200 rounded-lg shadow-sm p-6 scroll-mt-24">
+                <details open class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none outline-none pb-2 border-b border-gray-100 mb-4">
+                        <h2 class="text-xl font-semibold text-[#561216]">General Information</h2>
+                        <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="space-y-4">
+                        <p class="text-gray-700">Welcome to PHY 236: Advanced Lab I. This course site contains resources, experiment instructions, and data analysis guides.</p>
+                        
+                        <!-- Moodle Announcements Link Mock -->
+                        <div class="flex items-center gap-3 bg-gray-50 p-3 rounded border border-gray-100 hover:bg-gray-100 transition-colors w-full sm:w-fit">
+                            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z"/><path d="M7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/></svg>
+                            <a href="#" class="moodle-link font-medium">Announcements</a>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Topic 1: Experiments -->
+            <section id="experiments" class="moodle-topic bg-white border border-gray-200 rounded-lg shadow-sm p-6 scroll-mt-24">
+                <details open class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none outline-none pb-2 border-b border-gray-100 mb-4">
+                        <h2 class="text-xl font-semibold text-[#561216]">Step-by-Step Experiment Instructions</h2>
+                        <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div>
+                        <p class="mb-4 text-gray-700">Below are the video instructions and reference materials for the 10 course experiments. <em>Detailed reference documents and data sheets will be linked here as the semester progresses.</em></p>
+                        
+                        <div class="overflow-x-auto rounded border border-gray-200">
+                            <table class="w-full text-sm text-left text-gray-700">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b border-gray-200">
+                                    <tr>
+                                        <th scope="col" class="p-3 w-16">Exp #</th>
+                                        <th scope="col" class="p-3">Experiment Title</th>
+                                        <th scope="col" class="p-3">Setup Guide</th>
+                                        <th scope="col" class="p-3">Resources</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                                        <td class="p-3 font-medium">1</td>
+                                        <td class="p-3">Hydrogen Spectra</td>
+                                        <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1 text-red-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg> YouTube Guide</a></td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1"><svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Manual (PDF)</a></td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                                <td class="p-3 font-medium">4</td>
+                                <td class="p-3">Black Body Radiation</td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1 text-red-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg> YouTube Guide</a></td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1"><svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Manual (PDF)</a></td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                                <td class="p-3 font-medium">5</td>
+                                <td class="p-3">Photoelectric Effect</td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1 text-red-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg> YouTube Guide</a></td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1"><svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Manual (PDF)</a></td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                                <td class="p-3 font-medium">6</td>
+                                <td class="p-3">X-ray Diffusion</td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1 text-red-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg> YouTube Guide</a></td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1"><svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Manual (PDF)</a></td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                                <td class="p-3 font-medium">7</td>
+                                <td class="p-3">Standing Waves, Quantum Analogs</td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1 text-red-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg> YouTube Guide</a></td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1"><svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Manual (PDF)</a></td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                                <td class="p-3 font-medium">8</td>
+                                <td class="p-3">Magnetic Dipole-Spin</td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1 text-red-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg> YouTube Guide</a></td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1"><svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Manual (PDF)</a></td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                                <td class="p-3 font-medium">9</td>
+                                <td class="p-3">Electron Diffraction</td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1 text-red-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg> YouTube Guide</a></td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1"><svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Manual (PDF)</a></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="p-3 font-medium">10</td>
+                                <td class="p-3">Gamma Ray Spectroscopy</td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1 text-red-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg> YouTube Guide</a></td>
+                                <td class="p-3"><a href="#" class="moodle-link flex items-center gap-1"><svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Manual (PDF)</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Topic 2: Python Visualization -->
+            <section id="python-viz" class="moodle-topic bg-white border border-gray-200 rounded-lg shadow-sm p-6 scroll-mt-24">
+                <details open class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none outline-none pb-2 border-b border-gray-100 mb-4">
+                        <h2 class="text-xl font-semibold text-[#561216]">Python Data Visualization</h2>
+                        <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div>
+                        <p class="mb-4 text-gray-700">In Advanced Lab I, we use Python (<code>numpy</code>, <code>scipy</code>, and <code>matplotlib</code>) to analyze and visualize our experimental data.</p>
+                        
+                        <!-- Python Code Block -->
+                        <div class="relative group mt-4">
+                            <button class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
+<pre class="text-sm text-gray-300 bg-[#1e1e1e] p-4 rounded shadow-inner overflow-x-auto"><code><span class="text-[#569cd6]">import</span> numpy <span class="text-[#569cd6]">as</span> np
+<span class="text-[#569cd6]">import</span> matplotlib.pyplot <span class="text-[#569cd6]">as</span> plt
+<span class="text-[#569cd6]">from</span> scipy.optimize <span class="text-[#569cd6]">import</span> curve_fit
+
+<span class="text-[#6a9955] italic"># 1. Load Data</span>
+<span class="text-[#6a9955] italic"># x_data, y_data = np.loadtxt('data.csv', delimiter=',')</span>
+
+<span class="text-[#6a9955] italic"># 2. Plot Setup</span>
+plt.figure(figsize=(<span class="text-[#b5cea8]">8</span>, <span class="text-[#b5cea8]">6</span>))
+plt.errorbar(x_data, y_data, yerr=<span class="text-[#b5cea8]">0.1</span>, fmt=<span class="text-[#ce9178]">'o'</span>, label=<span class="text-[#ce9178]">'Data'</span>, capsize=<span class="text-[#b5cea8]">3</span>)
+plt.show()</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Topic 3: Lab Reports -->
+            <section id="lab-reports" class="moodle-topic bg-white border border-gray-200 rounded-lg shadow-sm p-6 scroll-mt-24">
+                <details open class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none outline-none pb-2 border-b border-gray-100 mb-4">
+                        <h2 class="text-xl font-semibold text-[#561216]">Lab Reports</h2>
+                        <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div>
+                        <p class="mb-6 text-gray-700">Lab reports must be written clearly, concisely, and formatted professionally following standard structure for physics publications. We highly recommend using LaTeX via Overleaf for typesetting your reports.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <!-- Left Column: Report Structure -->
+                            <div>
+                                <h3 class="text-md font-semibold text-gray-800 mb-3">Report Structure</h3>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 ml-2">
+                                    <li><strong>Abstract:</strong> Summary of experiment, methodology, and primary result.</li>
+                                    <li><strong>Introduction & Theory:</strong> Physical principles and governing equations.</li>
+                                    <li><strong>Experimental Setup:</strong> Schematic and description of the apparatus.</li>
+                                    <li><strong>Data & Analysis:</strong> Data presentation and detailed error analysis.</li>
+                                    <li><strong>Conclusion:</strong> Interpretation of results.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Right Column: Submission Templates -->
+                            <div class="bg-gray-50 p-5 rounded border border-gray-200 h-fit">
+                                <h3 class="text-md font-semibold text-gray-800 mb-3">Submission Templates</h3>
+                                <div class="flex flex-col space-y-3">
+                                    <a href="#" class="flex items-center gap-2 text-[#561216] hover:underline">
+                                        <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                                        Download Word Template (.docx)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                <div class="bg-indigo-50/50 border border-indigo-100 rounded-lg p-6">
+                    <h3 class="text-lg font-medium text-[#561216] mb-3 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        Overleaf (LaTeX) Quick Start Guide
+                    </h3>
+                    
+                    <ol class="list-decimal list-inside space-y-2 text-sm text-gray-700 mb-6 ml-2">
+                        <li>Go to <a href="https://www.overleaf.com/" target="_blank" class="text-indigo-600 hover:underline font-medium">Overleaf.com</a> and create a free account (or log in).</li>
+                        <li>Click <strong>New Project</strong> and select <strong>Blank Project</strong>. Give it a name (e.g., "PHY236 - Exp 1").</li>
+                        <li>In the main editor window (middle screen), delete any default code that is there.</li>
+                        <li><strong>Copy the starter template</strong> below and paste it into your blank Overleaf document.</li>
+                        <comment-tag id="1"><li>Click the green <strong>Recompile</strong> button on the right side to generate your formatted PDF.</li></comment-tag id="1" text="<li><strong>Adding Graphs:</strong> Save your Python plots as <code>.png</code> or <code>.pdf</code> files. Click the <strong>Upload</strong> icon (top left in Overleaf) to add them to your project, then reference them using <code>\includegraphics</code>.</li>
+                        <li><strong>Adding Tables:</strong> Use the <code>tabular</code> environment as shown in the template below, or use a tool like <a href=&quot;https://www.tablesgenerator.com/&quot; target=&quot;_blank&quot; class=&quot;text-indigo-600 hover:underline&quot;>TablesGenerator.com</a> to generate LaTeX table code easily.</li>
+                        <li>Click the green <strong>Recompile</strong> button on the right side to generate your formatted PDF.</li>" type="suggestion">
+                    </ol>
+
+                    <h4 class="text-md font-medium text-gray-800 mb-2">Standard PHY 236 LaTeX Template</h4>
+                    <div class="bg-[#1e1e1e] rounded border border-gray-300 p-4 shadow-inner overflow-x-auto relative group">
+                        <button class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
+<pre class="text-sm text-gray-300"><code><span class="text-[#569cd6]">\documentclass</span>[11pt, twocolumn]{<span class="text-[#4ec9b0]">article</span>}
+<span class="text-[#569cd6]">\usepackage</span>[utf8]{<span class="text-[#4ec9b0]">inputenc</span>}
+<span class="text-[#569cd6]">\usepackage</span>{<span class="text-[#4ec9b0]">amsmath, amssymb, graphicx, hyperref</span>}
+<span class="text-[#569cd6]">\usepackage</span>[margin=1in]{<span class="text-[#4ec9b0]">geometry</span>}
+
+<span class="text-[#6a9955]">% --- Document Information ---</span>
+<span class="text-[#569cd6]">\title</span>{Experiment 1: Hydrogen Spectra<span class="text-[#569cd6]">\\</span> <span class="text-[#569cd6]">\large</span> PHY 236: Advanced Lab I}
+<span class="text-[#569cd6]">\author</span>{Your Name <span class="text-[#569cd6]">\and</span> Partner's Name}
+<span class="text-[#569cd6]">\date</span>{<span class="text-[#569cd6]">\today</span>}
+
+<span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">document</span>}
+<span class="text-[#569cd6]">\maketitle</span>
+
+<span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">abstract</span>}
+A brief summary of the experiment, your overarching methodology, and the primary quantitative result (including uncertainty).
+<span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">abstract</span>}
+
+<span class="text-[#569cd6]">\section</span>{Introduction and Theory}
+Explain the physical principles being tested. Introduce the governing equations. For example, the Rydberg formula:
+<span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">equation</span>}
+    <span class="text-[#569cd6]">\frac</span>{1}{<span class="text-[#569cd6]">\lambda</span>} = R_H <span class="text-[#569cd6]">\left</span>( <span class="text-[#569cd6]">\frac</span>{1}{n_1^2} - <span class="text-[#569cd6]">\frac</span>{1}{n_2^2} <span class="text-[#569cd6]">\right</span>)
+<span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">equation</span>}
+Where $R_H$ is the Rydberg constant.
+
+<span class="text-[#569cd6]">\section</span>{Experimental Setup}
+Describe the apparatus here. Do not copy the lab manual verbatim; summarize the key components and procedure in your own words.
+
+<span class="text-[#569cd6]">\section</span>{Data and Analysis}
+Present your data, visualizations, and detailed error analysis. Ensure all figures have captions. You can reference your figures in the text like this: As shown in Figure <span class="text-[#569cd6]">\ref</span>{fig:spectra}, the relationship is linear.
+
+<span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">figure</span>}[htbp]
+    <span class="text-[#569cd6]">\centering</span>
+    <span class="text-[#6a9955]">% Upload your image (e.g., plot.png) to Overleaf, then replace 'example-image' below</span>
+    <span class="text-[#569cd6]">\includegraphics</span>[width=0.45<span class="text-[#569cd6]">\textwidth</span>]{<span class="text-[#ce9178]">example-image</span>}
+    <span class="text-[#569cd6]">\caption</span>{Calibration curve for the hydrogen spectrometer. The markers indicate measured data, and the solid line is the theoretical fit.}
+    <span class="text-[#569cd6]">\label</span>{fig:spectra}
+<comment-tag id="2"><span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">figure</span>}
+
+<span class="text-[#569cd6]">\section</span>{Conclusion}</comment-tag id="2" text="<span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">figure</span>}
+
+<span class="text-[#6a9955]">% Example Table</span>
+<span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">table</span>}[htbp]
+    <span class="text-[#569cd6]">\centering</span>
+    <span class="text-[#569cd6]">\caption</span>{Measured wavelengths and calculated Rydberg constant values.}
+    <span class="text-[#569cd6]">\label</span>{tab:results}
+    <span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">tabular</span>}{c c c}
+        <span class="text-[#569cd6]">\hline</span>
+        Transition ($n_2 <span class="text-[#569cd6]">\rightarrow</span> n_1$) & Measured $\lambda$ (nm) & Calculated $R_H$ (m$^{-1}$) <span class="text-[#569cd6]">\\</span>
+        <span class="text-[#569cd6]">\hline</span>
+        $3 \rightarrow 2$ & $656.2 \pm 0.5$ & $1.097 \times 10^7$ <span class="text-[#569cd6]">\\</span>
+        $4 \rightarrow 2$ & $486.1 \pm 0.4$ & $1.096 \times 10^7$ <span class="text-[#569cd6]">\\</span>
+        <span class="text-[#569cd6]">\hline</span>
+    <span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">tabular</span>}
+<span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">table</span>}
+
+<span class="text-[#569cd6]">\section</span>{Conclusion}
+Provide your interpretation of the final results, explicitly stating whether they agree with accepted theoretical values. Discuss major sources of systematic and random error.
+
+<span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">document</span>}</code></pre>
+                    </div>
+                </div>
+                    </div>
+                </details>
+            </section>
+        </main>
+    </div>
+
+    <footer class="bg-white border-t border-gray-200 py-6 text-center text-sm text-gray-500 mt-auto">
+        <p class="mt-1">&copy; 2026 Coe College - PHY 236 Advanced Lab I.</p>
+    </footer>
+
+</body>
+</html>
