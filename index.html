@@ -211,7 +211,8 @@
                 </details>
             </section>
 
-            <!-- Topic 2: Python Visualization -->
+     
+          <!-- Topic 2: Python Visualization -->
             <section id="python-viz" class="moodle-topic bg-white border border-gray-200 rounded-lg shadow-sm p-6 scroll-mt-24">
                 <details class="group">
                     <summary class="flex justify-between items-center cursor-pointer list-none outline-none pb-2 border-b border-gray-100 mb-4">
@@ -219,11 +220,31 @@
                         <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <div>
-                        <p class="mb-4 text-gray-700">In Advanced Lab I, we use Python (<code>numpy</code>, <code>scipy</code>, and <code>matplotlib</code>) to analyze and visualize our experimental data.</p>
+                        <p class="mb-6 text-gray-700">In this Advanced Lab I, we will use Python (<code>numpy</code>, <code>scipy</code>, and <code>matplotlib</code>) to analyze and visualize our experimental data on Google Colab.</p>
                         
-                        <!-- Python Code Block -->
-                        <div class="relative group mt-4">
-                            <button class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
+                        <div class="bg-blue-50/50 border border-blue-100 rounded-lg p-6 mb-2">
+                            <h3 class="text-lg font-medium text-[#561216] mb-3 flex items-center gap-2">
+                                Google Colab Quick Start Guide
+                            </h3>
+                            
+                            <ol class="list-decimal list-inside space-y-2 text-sm text-gray-700 mb-6 ml-2">
+                                <li>Go to <a href="https://colab.research.google.com/" target="_blank" class="text-blue-600 hover:underline font-medium">Google Colab</a> and sign in with your Google account.</li>
+                                <li>Click <strong>Upload</strong> in the popup window to upload the <code>.ipynb</code> template file provided below, or click <strong>New Notebook</strong> to start from scratch.</li>
+                                <li><strong>Upload Data:</strong> Click the <strong>Folder icon</strong> on the far left sidebar of your Colab screen, then click the file upload icon to upload your experiment's <code>.csv</code> data file.</li>
+                                <li><strong>Copy the template code</strong> (if starting from scratch) and paste it into the first code block (cell) in your notebook.</li>
+                                <li>Update the filename in the code to match your uploaded data, then click the <strong>Play button</strong> (or press <kbd class="bg-gray-100 border border-gray-300 rounded px-1 font-mono text-xs shadow-sm">Shift</kbd> + <kbd class="bg-gray-100 border border-gray-300 rounded px-1 font-mono text-xs shadow-sm">Enter</kbd>) to generate your plot.</li>
+                            </ol>
+                            
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-2">
+                                <h4 class="text-md font-medium text-gray-800">Data Visualization Template</h4>
+                                <a href="#" class="inline-flex items-center gap-2 text-sm bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded shadow-sm transition-colors" title="Link to your actual .ipynb file here">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                    Download .ipynb Template
+                                </a>
+                            </div>
+                            <!-- Python Code Block -->
+                            <div class="relative group mt-2">
+                                <button class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
 <pre class="text-sm text-gray-300 bg-[#1e1e1e] p-4 rounded shadow-inner overflow-x-auto"><code><span class="text-[#569cd6]">import</span> numpy <span class="text-[#569cd6]">as</span> np
 <span class="text-[#569cd6]">import</span> matplotlib.pyplot <span class="text-[#569cd6]">as</span> plt
 <span class="text-[#569cd6]">from</span> scipy.optimize <span class="text-[#569cd6]">import</span> curve_fit
@@ -235,6 +256,7 @@
 plt.figure(figsize=(<span class="text-[#b5cea8]">8</span>, <span class="text-[#b5cea8]">6</span>))
 plt.errorbar(x_data, y_data, yerr=<span class="text-[#b5cea8]">0.1</span>, fmt=<span class="text-[#ce9178]">'o'</span>, label=<span class="text-[#ce9178]">'Data'</span>, capsize=<span class="text-[#b5cea8]">3</span>)
 plt.show()</code></pre>
+                            </div>
                         </div>
                     </div>
                 </details>
