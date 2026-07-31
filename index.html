@@ -235,7 +235,7 @@
                             
                             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-2">
                                 <h4 class="text-md font-medium text-gray-800">Data Visualization Template</h4>
-                                <a href="codes/PHY236_colab_curve_fitting.ipynb" class="inline-flex items-center gap-2 text-sm bg-#A68145 hover:bg-[#8e6d38] text-white font-medium py-1.5 px-3 rounded shadow-sm transition-colors" title="Use save as to download the .ipynb file here">
+                                <a href="codes/PHY236_colab_curve_fitting.ipynb" class="inline-flex items-center gap-2 text-sm bg-[#A68145] hover:bg-[#8e6d38] text-white font-medium py-1.5 px-3 rounded shadow-sm transition-colors" title="Use save as to download the .ipynb file here">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                                     Use "Save as" to download .ipynb Template
                                 </a>
@@ -286,7 +286,7 @@
                         <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </summary>
                     <div>
-                        <p class="mb-6 text-gray-700">Lab reports must be written clearly, concisely, and formatted professionally following standard structure for physics publications. We highly recommend using LaTeX via Overleaf for typesetting your reports.</p>
+                        <p class="mb-6 text-gray-700">Lab reports must be written clearly, concisely, and formatted professionally following standard structure for physics publications. We will use LaTeX via Overleaf for typesetting your reports.</p>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                             <!-- Left Column: Report Structure -->
@@ -300,18 +300,6 @@
                                     <li><strong>Conclusion:</strong> Interpretation of results.</li>
                                 </ul>
                             </div>
-
-                            <!-- Right Column: Submission Templates -->
-                            <div class="bg-gray-50 p-5 rounded border border-gray-200 h-fit">
-                                <h3 class="text-md font-semibold text-gray-800 mb-3">Submission Templates</h3>
-                                <div class="flex flex-col space-y-3">
-                                    <a href="#" class="flex items-center gap-2 text-[#561216] hover:underline">
-                                        <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                                        Download Word Template (.docx)
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
 
                 <div class="bg-indigo-50/50 border border-indigo-100 rounded-lg p-6">
                     <h3 class="text-lg font-medium text-[#561216] mb-3 flex items-center gap-2">
@@ -330,68 +318,7 @@
                     </ol>
 
                     <h4 class="text-md font-medium text-gray-800 mb-2">Standard PHY 236 LaTeX Template</h4>
-                    <div class="bg-[#1e1e1e] rounded border border-gray-300 p-4 shadow-inner overflow-x-auto relative group">
-                        <button class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
-<pre class="text-sm text-gray-300"><code><span class="text-[#569cd6]">\documentclass</span>[11pt, onecolumn]{<span class="text-[#4ec9b0]">article</span>}
-<span class="text-[#569cd6]">\usepackage</span>[utf8]{<span class="text-[#4ec9b0]">inputenc</span>}
-<span class="text-[#569cd6]">\usepackage</span>{<span class="text-[#4ec9b0]">amsmath, amssymb, graphicx, hyperref, float</span>}
-<span class="text-[#569cd6]">\usepackage</span>[margin=1in]{<span class="text-[#4ec9b0]">geometry</span>}
 
-<span class="text-[#6a9955]">% --- Document Information ---</span>
-<span class="text-[#569cd6]">\title{PHY 236: Advanced Lab I \\ Experiment 1: Hydrogen Spectra \large }
-<span class="text-[#569cd6]">\author</span>{Your Name <span class="text-[#569cd6]">\and</span> Partner's Name}
-<span class="text-[#569cd6]">\date</span>{<span class="text-[#569cd6]">\today</span>}
-
-<span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">document</span>}
-<span class="text-[#569cd6]">\maketitle</span>
-
-<span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">abstract</span>}
-A brief summary of the experiment, your overarching methodology, and the primary quantitative result (including uncertainty).
-<span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">abstract</span>}
-
-<span class="text-[#569cd6]">\section</span>{Introduction and Theory}
-Explain the physical principles being tested. Introduce the governing equations. For example, the Rydberg formula:
-<span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">equation</span>}
-    <span class="text-[#569cd6]">\frac</span>{1}{<span class="text-[#569cd6]">\lambda</span>} = R_H <span class="text-[#569cd6]">\left</span>( <span class="text-[#569cd6]">\frac</span>{1}{n_1^2} - <span class="text-[#569cd6]">\frac</span>{1}{n_2^2} <span class="text-[#569cd6]">\right</span>)
-<span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">equation</span>}
-Where $R_H$ is the Rydberg constant.
-
-<span class="text-[#569cd6]">\section</span>{Experimental Setup}
-Describe the apparatus here. Do not copy the lab manual verbatim; summarize the key components and procedure in your own words.
-
-<span class="text-[#569cd6]">\section</span>{Data and Analysis}
-Present your data, visualizations, and detailed error analysis. Ensure all figures have captions. You can reference your figures in the text like this: As shown in Figure <span class="text-[#569cd6]">\ref</span>{fig:spectra}, the relationship is linear.
-
-<span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">figure</span>}[htbp]
-    <span class="text-[#569cd6]">\centering</span>
-    <span class="text-[#6a9955]">% Upload your image (e.g., plot.png) to Overleaf, then replace 'example-image' below</span>
-    <span class="text-[#569cd6]">\includegraphics</span>[width=0.45<span class="text-[#569cd6]">\textwidth</span>]{<span class="text-[#ce9178]">example-image</span>}
-    <span class="text-[#569cd6]">\caption</span>{Calibration curve for the hydrogen spectrometer. The markers indicate measured data, and the solid line is the theoretical fit.}
-    <span class="text-[#569cd6]">\label</span>{fig:spectra}
-<comment-tag id="2"><span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">figure</span>}
-
-<span class="text-[#569cd6]">\section</span>{Conclusion}</comment-tag id="2" text="<span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">figure</span>}
-
-<span class="text-[#6a9955]">% Example Table</span>
-<span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">table</span>}[htbp]
-    <span class="text-[#569cd6]">\centering</span>
-    <span class="text-[#569cd6]">\caption</span>{Measured wavelengths and calculated Rydberg constant values.}
-    <span class="text-[#569cd6]">\label</span>{tab:results}
-    <span class="text-[#569cd6]">\begin</span>{<span class="text-[#4ec9b0]">tabular</span>}{c c c}
-        <span class="text-[#569cd6]">\hline</span>
-        Transition ($n_2 <span class="text-[#569cd6]">\rightarrow</span> n_1$) & Measured $\lambda$ (nm) & Calculated $R_H$ (m$^{-1}$) <span class="text-[#569cd6]">\\</span>
-        <span class="text-[#569cd6]">\hline</span>
-        $3 \rightarrow 2$ & $656.2 \pm 0.5$ & $1.097 \times 10^7$ <span class="text-[#569cd6]">\\</span>
-        $4 \rightarrow 2$ & $486.1 \pm 0.4$ & $1.096 \times 10^7$ <span class="text-[#569cd6]">\\</span>
-        <span class="text-[#569cd6]">\hline</span>
-    <span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">tabular</span>}
-<span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">table</span>}
-
-<span class="text-[#569cd6]">\section</span>{Conclusion}
-Provide your interpretation of the final results, explicitly stating whether they agree with accepted theoretical values. Discuss major sources of systematic and random error.
-
-<span class="text-[#569cd6]">\end</span>{<span class="text-[#4ec9b0]">document</span>}</code></pre>
-                    </div>
                 </div>
                     </div>
                 </details>
