@@ -235,7 +235,7 @@
                             
                             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-2">
                                 <h4 class="text-md font-medium text-gray-800">Data Visualization Template</h4>
-                                <a href="codes/PHY236_colab_curve_fitting.ipynb" class="inline-flex items-center gap-2 text-sm bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded shadow-sm transition-colors" title="Link to your actual .ipynb file here">
+                                <a href="codes/PHY236_colab_curve_fitting.ipynb" class="inline-flex items-center gap-2 text-sm bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded shadow-sm transition-colors" title="Use save as to download the .ipynb file here">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                                     Download .ipynb Template
                                 </a>
@@ -253,6 +253,23 @@
 <span class="text-[#6a9955]">df = pd.read_csv(filename)</span>
 <span class="text-[#6a9955]">print("Columns:", df.columns.tolist())</span>
 <span class="text-[#6a9955]">df.head()</span>
+
+<span class="text-[#569cd6]"> # --- edit these four lines to match your data ---</span>
+<span class="text-[#569cd6]">X_COL  = "X"          # column name for the x axis</span>
+<span class="text-[#569cd6]">Y_COL  = "Y"       # column name for the y axis</span>
+<span class="text-[#569cd6]"> XLABEL = "Time (s)"        # always Quantity (unit)</span>
+<span class="text-[#569cd6]">YLABEL = "Voltage (V)"</span>
+
+<span class="text-[#6a9955]">uplt.figure(figsize=(5, 3.5))</span>
+<span class="text-[#6a9955]">plt.plot(df[X_COL], df[Y_COL], "o", label="Run 1")</span>
+<span class="text-[#6a9955]">plt.xlabel(XLABEL)</span>
+<span class="text-[#6a9955]">plt.ylabel(YLABEL)</span>
+<span class="text-[#6a9955]">plt.legend()</span>
+<span class="text-[#6a9955]">plt.show()</span>
+<span class="text-[#6a9955]">plt.xlabel(XLABEL)</span>
+
+
+
 </code></pre>
                             </div>
                         </div>
