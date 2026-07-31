@@ -240,6 +240,17 @@
                                     Use "Save as" to download .ipynb Template
                                 </a>
                             </div>
+
+
+                            <div class="flex flex-col space-y-3 md:border-l border-gray-300 md:pl-8">
+                                <a href="source/data.csv" class="flex items-center gap-2 text-[#561216] hover:underline">
+                                    <svg class="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                                    Download Example of Data File (CSV)
+                                </a>
+
+                            </div>
+
+                            
                             <!-- Python Code Block -->
                             <div class="relative group mt-2">
                                 <button class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
