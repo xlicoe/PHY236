@@ -1,5 +1,5 @@
 # PHY236
-Repo for PHY236 Advanced Lab 
+Repo for PHY236 Advanced Lab I
 
 Coe College, Department of Physics
 
