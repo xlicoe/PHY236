@@ -1,3 +1,4 @@
 # PHY236
-Repo for Coe College, Department of Physics, PHY236 Advanced Lab 
+Repo for PHY236 Advanced Lab 
+Coe College, Department of Physics
 Site live at: https://xlicoe.github.io/PHY236/
