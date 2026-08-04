@@ -264,34 +264,14 @@
                             <!-- Python Code Block -->
                             <div class="relative group mt-2">
                                 <button class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);">Copy</button>
-<pre class="text-sm text-gray-300 bg-[#1e1e1e] p-4 rounded shadow-inner overflow-x-auto"><code><span class="text-[#569cd6]">import</span> numpy <span class="text-[#569cd6]">as</span> np
-<span class="text-[#569cd6]">import</span> pandas <span class="text-[#569cd6]">as</span> pd
-<span class="text-[#569cd6]">import</span> matplotlib.pyplot <span class="text-[#569cd6]">as</span> plt
-<span class="text-[#569cd6]">from</span> google.colab <span class="text-[#569cd6]">import</span> files
-<span class="text-[#569cd6]">from</span> scipy.optimize <span class="text-[#569cd6]">import</span> curve_fit
+<pre class="text-sm text-gray-300 bg-[#1e1e1e] p-4 rounded shadow-inner overflow-x-auto">
 
-<span class="text-[#6a9955]">uploaded = files.upload()          # opens a "Choose Files" button</span>
-<span class="text-[#6a9955]">df = pd.read_csv(filename)</span>
-<span class="text-[#6a9955]">print("Columns:", df.columns.tolist())</span>
-<span class="text-[#6a9955]">df.head()</span>
+                            <img src="source/overleaf_GUI.png" class="w-full h-auto rounded border border-indigo-200 shadow-sm object-cover">
+                        <p class="text-xs text-indigo-500 mt-2 text-center italic">Example of the Overleaf editing environment.</p>
 
-<span class="text-[#569cd6]"> # --- edit these four lines to match your data ---</span>
-<span class="text-[#569cd6]">X_COL  = "X"          # column name for the x axis</span>
-<span class="text-[#569cd6]">Y_COL  = "Y"       # column name for the y axis</span>
-<span class="text-[#569cd6]">XLABEL = "Time (s)"        # always Quantity (unit)</span>
-<span class="text-[#569cd6]">YLABEL = "Voltage (V)"</span>
-
-<span class="text-[#6a9955]">uplt.figure(figsize=(5, 3.5))</span>
-<span class="text-[#6a9955]">plt.plot(df[X_COL], df[Y_COL], "o", label="Run 1")</span>
-<span class="text-[#6a9955]">plt.xlabel(XLABEL)</span>
-<span class="text-[#6a9955]">plt.ylabel(YLABEL)</span>
-<span class="text-[#6a9955]">plt.legend()</span>
-<span class="text-[#6a9955]">plt.show()</span>
-<span class="text-[#6a9955]">plt.xlabel(XLABEL)</span>
-
-
-
-</code></pre>
+                            <img src="source/overleaf_GUI.png" class="w-full h-auto rounded border border-indigo-200 shadow-sm object-cover">
+                        <p class="text-xs text-indigo-500 mt-2 text-center italic">Example of the Overleaf editing environment.</p>
+</pre>
                             </div>
                         </div>
                     </div>
